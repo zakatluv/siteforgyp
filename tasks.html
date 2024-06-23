@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контроль усвоения знаний</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        .content-container {
+            padding: 20px;
+        }
+
+        .component {
+            margin: 50px 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .component h2 {
+            text-align: center;
+            color: #00BFFF;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-form label {
+            font-size: 1.2em;
+        }
+
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"],
+        .feedback-form textarea,
+        .feedback-form select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        .feedback-form textarea {
+            height: 100px;
+        }
+
+        .feedback-form button {
+            background-color: #00BFFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .feedback-form button:hover {
+            background-color: #008CBA;
+        }
+
+        .resource-links {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .resource-links h2 {
+            color: #00BFFF;
+        }
+
+        .resource-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .resource-links li {
+            margin: 10px 0;
+        }
+
+        .resource-links a {
+            color: #00BFFF;
+            text-decoration: none;
+        }
+
+        .resource-links a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 100px;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .home-link:hover {
+            background-color: #555;
+        }
+
+        .floating-video {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 169px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <a class="home-link" href="index.html">← Вернуться к компонентам компьютера</a>
+        <section class="component" id="component-2">
+            <h2>Контроль усвоения знаний</h2>
+            <form class="feedback-form">
+                <div class="question-block">
+                    <label for="question1">1. Какой компонент компьютера отвечает за выполнение вычислений?</label>
+                    <select id="question1" name="question1">
+                        <option value="none">Выберите ответ</option>
+                        <option value="cpu">Процессор</option>
+                        <option value="gpu">Видеокарта</option>
+                        <option value="motherboard">Материнская плата</option>
+                        <option value="ram">Оперативная память</option>
+                    </select>
+                </div>
+
+                <div class="question-block">
+                    <label for="question2">2. Назовите основной протокол, используемый для передачи данных в интернете.</label>
+                    <select id="question2" name="question2">
+                        <option value="none">Выберите ответ</option>
+                        <option value="ftp">FTP</option>
+                        <option value="http">HTTP</option>
+                        <option value="smtp">SMTP</option>
+                        <option value="tcp">TCP</option>
+                    </select>
+                </div>
+
+                <div class="question-block">
+                    <label for="question3">3. Что такое фишинг и как защититься от него?</label>
+                    <select id="question3" name="question3">
+                        <option value="none">Выберите ответ</option>
+                        <option value="a">Тип кибератаки, при которой используются поддельные электронные письма или веб-сайты для обмана пользователей.</option>
+                        <option value="b">Метод увеличения производительности компьютера за счет разгона процессора.</option>
+                        <option value="c">Техника резервного копирования данных для предотвращения потери информации.</option>
+                        <option value="d">Процесс обновления программного обеспечения для устранения уязвимостей.</option>
+                    </select>
+                </div>
+
+                <div class="question-block">
+                    <label for="question4">4. Какое устройство компьютера отвечает за вывод изображения на экран?</label>
+                    <select id="question4" name="question4">
+                        <option value="none">Выберите ответ</option>
+                        <option value="cpu">Процессор</option>
+                        <option value="gpu">Видеокарта</option>
+                        <option value="motherboard">Материнская плата</option>
+                        <option value="ram">Оперативная память</option>
+                    </select>
+                </div>
+
+                <div class="question-block">
+                    <label for="question5">5. Как называется основное устройство, которое соединяет все компоненты компьютера?</label>
+                    <select id="question5" name="question5">
+                        <option value="none">Выберите ответ</option>
+                        <option value="cpu">Процессор</option>
+                        <option value="gpu">Видеокарта</option>
+                        <option value="motherboard">Материнская плата</option>
+                        <option value="psu">Блок питания</option>
+                    </select>
+                </div>
+
+                <button type="button" onclick="checkAnswers()">Проверить ответы</button>
+            </form>
+        </section>
+        <div class="spacer"></div>
+
+        <section class="component" id="component-3">
+            <h2>Обратная связь</h2>
+            <form class="feedback-form">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Ваш email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="feedback">Ваши комментарии:</label>
+                <textarea id="feedback" name="feedback"></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+
+        <div class="resource-links">
+            <h2>Дополнительные материалы:</h2>
+            <ul>
+                <li><a href="https://videouroki.net/video/13-personalnyj-kompyuter.html" target="_blank">Персональный компьютер</a></li>
+                <li><a href="https://videouroki.net/video/12-ustrojstva-kompyutera-i-ih-funkcii.html" target="_blank">Устройства компьютера и их функции</a></li>
+                <li><a href="https://videouroki.net/video/14-ponyatie-programmnogo-obespecheniya-sistemnoe-programmnoe-obespechenie.html" target="_blank">Понятие
+                <li><a href="https://videouroki.net/video/14-ponyatie-programmnogo-obespecheniya-sistemnoe-programmnoe-obespechenie.html" target="_blank">Понятие программного обеспечения. Системное программное обеспечение</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Меню</button>
+            <div class="dropdown-content">
+                <a href="history.html">История компьютеров</a>
+                <a href="internet.html">Как работает интернет</a>
+                <a href="software.html">Типы программного обеспечения</a>
+                <a href="cybersecurity.html">Основы кибербезопасности</a>
+                <a href="robots.html">Интересные факты о роботах</a>
+                <a href="statistics.html">Статистика</a>
+                <a href="tasks.html">Контроль знаний</a>
+            </div>
+        </div>
+    
+        <iframe class="floating-video" src="https://www.youtube.com/embed/hscJXcQXOS4" allowfullscreen></iframe>
+    
+        <script>
+            function checkAnswers() {
+                const question1 = document.getElementById("question1").value;
+                const question2 = document.getElementById("question2").value;
+                const question3 = document.getElementById("question3").value;
+                const question4 = document.getElementById("question4").value;
+                const question5 = document.getElementById("question5").value;
+                let message = '';
+    
+                if (question1 === "cpu") {
+                    message += "1. Правильно! Процессор отвечает за выполнение вычислений.\n";
+                } else {
+                    message += "1. Неправильно. Правильный ответ: Процессор.\n";
+                }
+    
+                if (question2 === "tcp") {
+                    message += "2. Правильно! TCP - основной протокол для передачи данных в интернете.\n";
+                } else {
+                    message += "2. Неправильно. Правильный ответ: TCP.\n";
+                }
+    
+                if (question3 === "a") {
+                    message += "3. Правильно! Фишинг - это тип кибератаки с использованием поддельных писем или веб-сайтов.\n";
+                } else {
+                    message += "3. Неправильно. Правильный ответ: Тип кибератаки, при которой используются поддельные электронные письма или веб-сайты для обмана пользователей.\n";
+                }
+    
+                if (question4 === "gpu") {
+                    message += "4. Правильно! Видеокарта отвечает за вывод изображения на экран.\n";
+                } else {
+                    message += "4. Неправильно. Правильный ответ: Видеокарта.\n";
+                }
+    
+                if (question5 === "motherboard") {
+                    message += "5. Правильно! Основное устройство, которое соединяет все компоненты компьютера, называется материнская плата.\n";
+                } else {
+                    message += "5. Неправильно. Правильный ответ: Материнская плата.\n";
+                }
+    
+                alert(message);
+            }
+        </script>
+    </body>
+    </html>
+    

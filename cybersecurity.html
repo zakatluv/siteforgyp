@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы кибербезопасности</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .content-container {
+            padding: 20px;
+        }
+
+        .component {
+            margin: 50px 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .cyber-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .spacer {
+            height: 50px;
+        }
+
+        .navigation-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .navigation-buttons button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 100px;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .home-link:hover {
+            background-color: #555;
+        }
+
+            /* Плавающая кнопка */
+            .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .floating-button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <a class="home-link" href="index.html">← Вернуться к компонентам компьютера</a>
+        <section class="component" id="component-1">
+            <img src="cybersecurity.jpg" alt="Кибербезопасность" class="cyber-image">
+            <h2>Что такое кибербезопасность?</h2>
+            <p>Кибербезопасность — это защита компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных от злонамеренных атак. Это важно для обеспечения безопасности информации.</p>
+        </section>
+        <div class="spacer"></div>
+        <section class="component" id="component-2">
+            <img src="passwords.jpg" alt="Пароли" class="cyber-image">
+            <h2>Сильные пароли</h2>
+            <p>Использование сильных паролей помогает защитить ваши учетные записи. Сильный пароль должен содержать буквы, цифры и специальные символы.</p>
+        </section>
+        <div class="spacer"></div>
+        <section class="component" id="component-3">
+            <img src="phishing.jpg" alt="Фишинг" class="cyber-image">
+            <h2>Фишинг</h2>
+            <p>Фишинг — это попытка получить личную информацию, такую как пароли и данные кредитных карт, путем обмана. Будьте осторожны с подозрительными сообщениями и ссылками.</p>
+        </section>
+        <div class="spacer"></div>
+        <section class="component" id="component-4">
+            <img src="updates.jpg" alt="Обновления" class="cyber-image">
+            <h2>Обновления программ</h2>
+            <p>Регулярное обновление программного обеспечения помогает защитить устройства от новых угроз. Убедитесь, что ваши программы и операционная система всегда обновлены.</p>
+        </section>
+        <div class="spacer"></div>
+    </div>
+    <div class="navigation-buttons">
+        <button id="scroll-up">↑</button>
+        <button id="scroll-down">↓</button>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Меню</button>
+        <div class="dropdown-content">
+            <a href="history.html">История компьютеров</a>
+            <a href="internet.html">Как работает интернет</a>
+            <a href="software.html">Типы программного обеспечения</a>
+            <a href="cybersecurity.html">Основы кибербезопасности</a>
+            <a href="robots.html">Интересные факты о роботах</a>
+            <a href="statistics.html">Статистика</a>
+            <a href="tasks.html">Контроль знаний</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollToPlugin.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const components = document.querySelectorAll(".component");
+            let currentComponentIndex = 0;
+
+            document.getElementById("scroll-up").addEventListener("click", () => {
+                if (currentComponentIndex > 0) {
+                    currentComponentIndex--;
+                    scrollToComponent(currentComponentIndex);
+                } else {
+                    scrollToTop();
+                }
+            });
+
+            document.getElementById("scroll-down").addEventListener("click", () => {
+                if (currentComponentIndex < components.length - 1) {
+                    currentComponentIndex++;
+                    scrollToComponent(currentComponentIndex);
+                }
+            });
+
+            function scrollToComponent(index) {
+                gsap.to(window, {
+                    scrollTo: components[index],
+                    duration: 1
+                });
+            }
+
+            function scrollToTop() {
+                gsap.to(window, {
+                    scrollTo: { y: 0 },
+                    duration: 1
+                });
+            }
+        });
+    </script>
+</body>
+</html>
